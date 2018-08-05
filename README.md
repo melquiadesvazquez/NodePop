@@ -1,5 +1,12 @@
 # Nodepop
 
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+[![Build Status][travis-image]][travis-url]
+[![Test Coverage][coveralls-image]][coveralls-url]
+[![MIT License][license-image]][license-url]
+[![Slack][slack-image]][slack-url]
+
 Website and API to handle second hand products built with Nodejs, Express and MongoDB.
 
 ## Prerequisites
@@ -64,7 +71,7 @@ The web app will show a list of ads and will alow to search and filter with diff
 
 ## RESTful API services
 
-The four primary or most-commonly-used HTTP methods are implemented
+The four primary or most-commonly-used HTTP methods are implemented:
 
 + GET &ndash; returning the list of ads, ads by id and tags
 + POST &ndash; creating an ad
