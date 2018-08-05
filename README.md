@@ -133,7 +133,7 @@ Showing all the ads with `price` 50 or less with the `tag` *lifestyle* sorted by
                 "url":"/apiv1/ads?limit=3&tag=lifestyle&price=-50&sort=price&page=2"
             }
         ]
-        }
+    }
     ```
 Listing an ad by ID:
 
