@@ -38,7 +38,7 @@ mv .env.example .env
 Initialize the database
 
 ```shell
-npm run install_db
+npm run installDB
 ```
 
 Get a development environment running

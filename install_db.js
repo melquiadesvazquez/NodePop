@@ -3,7 +3,7 @@
 require('dotenv').config();
 
 const readline = require('readline');
-const ads = require('./data/data.json').ads;
+const ads = require('./data/ads.json').ads;
 const conn = require('./lib/connectMongoose');
 const Ad = require('./models/Ad');
 
