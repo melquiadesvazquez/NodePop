@@ -58,9 +58,9 @@ The web app will show a list of ads and will alow to search and filter with diff
 
 + `name` (optional) &ndash; a String with the name of the item *starts*
 + `forSale` (optional) &ndash;  a Boolean to determine whether the item is for sale or to buy
-+ `price` (optional) &ndash; a String with four possible values i.e. 10-50, 50-, -50, 50
++ `price` (optional) &ndash; a String with four possible values i.e. 10-50 (range), 50- (>=), -50 (<=), 50 (=)
 + `tag` (optional) &ndash; a String with four possible values *lifestyle*, *work*, *motor* and *mobile*
-+ `short` (optional) &ndash; a String that defines the sort criteria
++ `sort` (optional) &ndash; a String that defines the sort criteria
 + `limit` (optional) &ndash; a Number that set the limit of items per page
 + `page` (optional) &ndash; a Number that set the page shown
 
@@ -75,68 +75,65 @@ The four primary or most-commonly-used HTTP methods are implemented:
 
 ## Testing
 
-Showing all the ads with the `tag` *lifestyle* sorted by `name` listing 3 by page:
+Showing all the ads listing 6 by page (default):
 
-+ Website &ndash; <http://localhost:3003/ads?limit=3&sort=name&tag=lifestyle>
++ Website &ndash; <http://localhost:3003/ads?limit=6>
   
     ![Nodepop web version](https://raw.githubusercontent.com/melquiadesvazquez/Nodepop/master/public/images/misc/web.jpg)
 
-+ API &ndash; <http://localhost:3003/apiv1/ads?limit=3&sort=name&tag=lifestyle>
+Showing all the ads with `price` 50 or less with the `tag` *lifestyle* sorted by `name` listing 3 by page and sorted by price:
+
++ API &ndash; <http://localhost:3003/apiv1/ads?limit=3&tag=lifestyle&price=-50&sort=price>
     ```json
     {  
         "success":true,
         "result":[  
             {  
+                "forSale":false,
+                "tags":[  
+                    "lifestyle"
+                ],
+                "_id":"5b6706e27641bd4ad078b3f7",
+                "name":"Football ball",
+                "price":11,
+                "picture":"http://localhost:3003/images/ads/football-1419954_1920.jpg",
+                "created":"2018-08-05T14:17:06.540Z"
+            },
+            {  
                 "forSale":true,
                 "tags":[  
                     "lifestyle",
-                    "motor"
+                    "work"
                 ],
-                "_id":"5b655f650fe24a26c02c1832",
-                "name":"Bicycle",
-                "price":230.15,
-                "picture":"http://localhost:3003/images/ads/bicycle-407215_1920.jpg",
-                "created":"2018-08-04T08:10:13.432Z"
-            },
-            {  
-                "forSale":false,
-                "tags":[  
-                    "lifestyle",
-                    "motor"
-                ],
-                "_id":"5b6591428675ea3a9088b962",
-                "name":"Car",
-                "price":9100,
-                "picture":"http://localhost:3003/images/ads/cuba-1197800_1920.jpg",
-                "created":"2018-08-04T11:42:58.086Z"
+                "_id":"5b6706e27641bd4ad078b3ff",
+                "name":"Shoes",
+                "price":40,
+                "picture":"http://localhost:3003/images/ads/shoes-1638873_1920.jpg",
+                "created":"2018-08-05T14:17:06.542Z"
             },
             {  
                 "forSale":false,
                 "tags":[  
                     "lifestyle"
                 ],
-                "_id":"5b655f650fe24a26c02c1834",
-                "name":"Football ball",
-                "price":11,
-                "picture":"http://localhost:3003/images/ads/football-1419954_1920.jpg",
-                "created":"2018-08-04T08:10:13.433Z"
+                "_id":"5b6706e27641bd4ad078b3fd",
+                "name":"TV",
+                "price":45.5,
+                "picture":"http://localhost:3003/images/ads/tv-1844964_1920.jpg",
+                "created":"2018-08-05T14:17:06.541Z"
             }
         ],
         "pages":[  
             {  
                 "number":1,
-                "url":"/apiv1/ads?limit=3&sort=name&tag=lifestyle&page=1"
+                "url":"/apiv1/ads?limit=3&tag=lifestyle&price=-50&sort=price&page=1"
             },
             {  
                 "number":2,
-                "url":"/apiv1/ads?limit=3&sort=name&tag=lifestyle&page=2"
-            },
-            {  
-                "number":3,
-                "url":"/apiv1/ads?limit=3&sort=name&tag=lifestyle&page=3"
+                "url":"/apiv1/ads?limit=3&tag=lifestyle&price=-50&sort=price&page=2"
             }
         ]
-    }
+        }
     ```
 Listing an ad by ID:
 
