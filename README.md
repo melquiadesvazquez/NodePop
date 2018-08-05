@@ -54,7 +54,7 @@ Open your browser and go to:
 
 The web app will show a list of ads and will alow to search and filter with different criteria, the available filters are:
 
-+ `prev` (optional) &ndash; a String with the name of the item *starts*
++ `name` (optional) &ndash; a String with the name of the item *starts*
 + `forSale` (optional) &ndash;  a Boolean to determine whether the item is for sale or to buy
 + `price` (optional) &ndash; a String with four possible values i.e. 10-50, 50-, -50, 50
 + `tag` (optional) &ndash; a String with four possible values *lifestyle*, *work*, *motor* and *mobile*
