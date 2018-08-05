@@ -1,11 +1,6 @@
 # Nodepop
 
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
-[![Build Status][travis-image]][travis-url]
-[![Test Coverage][coveralls-image]][coveralls-url]
 [![MIT License][license-image]][license-url]
-[![Slack][slack-image]][slack-url]
 
 Website and API to handle second hand products built with Nodejs, Express and MongoDB.
 
@@ -232,3 +227,12 @@ Updating a product:
 ## Restrictions
 
 + Both the website and API will shown a maximum of 6 items per page with 24 in total, this can be changed on the .env file
+
+
+## License
+
+[MIT][license-url]
+
+
+[license-image]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-url]: LICENSE
