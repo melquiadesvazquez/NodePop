@@ -18,6 +18,7 @@ conn.once('open', async () => {
 
     await initAds(ads);
     conn.close();
+    process.exit();
   } catch (err) {
     console.log('There was an error', err);
     process.exit(1);
