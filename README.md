@@ -67,7 +67,7 @@ Show all the ads with the `tag` *lifestyle* sorted by `name` listing 3 by page:
 
 + Website &ndash; <http://localhost:3003/ads?limit=3&sort=name&tag=lifestyle>
   
-    ![Nodepop web version](https://raw.githubusercontent.com/melquiadesvazquez/Nodepop/master/public/images/misc/web.jpg?)
+    ![Nodepop web version](https://raw.githubusercontent.com/melquiadesvazquez/Nodepop/master/public/images/misc/web.jpg)
 
 + API &ndash; <http://localhost:3003/apiv1/ads?limit=3&sort=name&tag=lifestyle>
     ```json
