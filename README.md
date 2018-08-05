@@ -77,7 +77,7 @@ The four primary or most-commonly-used HTTP methods are implemented:
 
 Showing all the ads listing 6 by page (default):
 
-+ Website &ndash; <http://localhost:3003/ads?limit=6>
++ Website &ndash; <http://localhost:3003/ads>
   
     ![Nodepop web version](https://raw.githubusercontent.com/melquiadesvazquez/Nodepop/master/public/images/misc/web.jpg)
 
