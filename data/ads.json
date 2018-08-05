@@ -8,8 +8,7 @@
             ],
             "name": "Bicycle",
             "price": 230.15,
-            "picture": "bicycle-407215_1920.jpg",
-            "updated": "2018-07-31T21:45:55.880Z"
+            "picture": "bicycle-407215_1920.jpg"
         },
         {
             "forSale": false,
@@ -19,8 +18,7 @@
             ],
             "name": "iPhone 6S",
             "price": 50,
-            "picture": "iphone-410311_1280.jpg",
-            "updated": "2018-07-31T21:45:55.881Z"
+            "picture": "iphone-410311_1280.jpg"
         },
         {
             "forSale": false,

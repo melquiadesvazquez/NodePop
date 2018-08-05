@@ -1,17 +1,18 @@
 # Nodepop
 
-Website and API with second hand articles built in with Nodejs and Express
+Website and API to handle second hand products built with Nodejs, Express and MongoDB.
 
 ## Prerequisites
 
-You need to install the following on your machine before running this project
+You need to install the following software on your machine before running this project:
 
 1. Node.js  &ndash; <https://github.com/joyent/node/wiki/Installation>
 2. npm (Node package manager)  &ndash; <https://github.com/isaacs/npm>
+3. MongoDB (Database)  &ndash; <https://www.mongodb.com/download-center#community>
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 Download the repository from GitHub
 
@@ -57,13 +58,22 @@ The web app will show a list of ads and will alow to search and filter with diff
 + `forSale` (optional) &ndash;  a Boolean to determine whether the item is for sale or to buy
 + `price` (optional) &ndash; a String with four possible values i.e. 10-50, 50-, -50, 50
 + `tag` (optional) &ndash; a String with four possible values *lifestyle*, *work*, *motor* and *mobile*
-+ `start` (optional) &ndash; a Number that skips the items
++ `short` (optional) &ndash; a String that defines the sort criteria
 + `limit` (optional) &ndash; a Number that set the limit of items per page
 + `page` (optional) &ndash; a Number that set the page shown
 
+## RESTful API services
+
+The four primary or most-commonly-used HTTP methods are implemented
+
++ GET &ndash; returning the list of ads, ads by id and tags
++ POST &ndash; creating an ad
++ DELETE &ndash; deleting an ad
++ PUT  &ndash; updating an ad
+
 ## Testing
 
-Show all the ads with the `tag` *lifestyle* sorted by `name` listing 3 by page:
+Showing all the ads with the `tag` *lifestyle* sorted by `name` listing 3 by page:
 
 + Website &ndash; <http://localhost:3003/ads?limit=3&sort=name&tag=lifestyle>
   
@@ -126,15 +136,90 @@ Show all the ads with the `tag` *lifestyle* sorted by `name` listing 3 by page:
         ]
     }
     ```
+Listing an ad by ID:
 
-List the number of products per tag:
++ API &ndash; <http://localhost:3003/apiv1/ads/:id>
+  
+Listing the number of products per tag:
 
-+ API &ndash; <http://localhost:3003/apiv1/ads/tags/>
++ API &ndash; <http://localhost:3003/apiv1/ads/tags>
+    ```json
+    {  
+        "success":true,
+        "result":[  
+            {  
+                "lifestyle":8
+            },
+            {  
+                "work":4
+            },
+            {  
+                "motor":3
+            },
+            {  
+                "mobile":3
+            }
+        ]
+    }
+    ```
 
-## Built With
+Creating a product:
+
++ Place the product's picture on `Nodepop/public/images/ads`
++ API (POST x-www-form-urlencoded) &ndash; <http://localhost:3003/apiv1/ads/>
+    ```json
+    {
+        "forSale": false,
+        "tags": [
+            "lifestyle",
+            "mobile"
+        ],
+        "name": "iPhone 6S",
+        "price": 50,
+        "picture": "iphone-410311_1280.jpg"
+    }
+    ```
+
+Deleting a product:
+
++ Get the ID of the product
++ API (DELETE x-www-form-urlencoded) &ndash; <http://localhost:3003/apiv1/ads/:id>
++ The deleted product will be returned
+    ```json
+    {  
+        "success": true,
+        "result": {  
+            "forSale":false,
+            "tags": [  
+                "lifestyle",
+                "mobile"
+            ],
+            "_id": "5b66fde6e5a6094094d329fb",
+            "name": "iPhone 6S",
+            "price": 50,
+            "picture": "http://localhost:3003/images/ads/iphone-410311_1280.jpg",
+            "created": "2018-08-05T13:38:46.273Z",
+            "__v": 0
+        }
+    }
+    ```
+
+Updating a product:
+
++ API (PUT x-www-form-urlencoded) &ndash; <http://localhost:3003/apiv1/ads/:id>
+    ```json
+    {
+        "tags": [
+            "mobile"
+        ]
+    }
+    ```
+
+## Built with
 
 + [Nodejs](https://nodejs.org/) - JavaScript run-time environment
 + [Express](http://expressjs.com/) - Web application framework for Node.js
++ [MongoDB](https://www.mongodb.com/) - NoSQL document-oriented database program
 + [Bootstrap](https://getbootstrap.com/) - Front-end framework with CSS templates as well as JavaScript extensions
 
 ## Restrictions
