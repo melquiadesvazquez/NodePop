@@ -22,7 +22,7 @@ Download the repository from GitHub
 git clone https://github.com/melquiadesvazquez/Nodepop.git
 ```
 
-Download the repository from GitHub
+Install de project with NPM
 
 ```shell
 cd Nodepop
@@ -49,8 +49,8 @@ npm run dev
 
 Open your browser and go to:
 
-+ Website &ndash; <http://localhost:3003/ads/>
-+ API &ndash; <http://localhost:3003/apiv1/ads>
++ Website &ndash; http://localhost:3003/ads/
++ API &ndash; http://localhost:3003/apiv1/ads
 
 ## Url parameters
 
