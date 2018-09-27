@@ -4,6 +4,8 @@
 
 Website and API to handle second hand products built with Nodejs, Express and MongoDB.
 
+Live demo available on https://melnodepop.herokuapp.com/
+
 ## Prerequisites
 
 You need to install the following software on your machine before running this project:
@@ -74,6 +76,8 @@ The four primary or most-commonly-used HTTP methods are implemented:
 + PUT  &ndash; updating an ad
 
 ## Testing
+
+Check the live demo [here](https://melnodepop.herokuapp.com/)
 
 Showing all the ads listing 6 by page (default):
 
